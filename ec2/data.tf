@@ -10,6 +10,22 @@ data "terraform_remote_state" "vpc" {
 }
 
 
+
+data "terraform_remote_state" "rds" {
+  backend = "remote"
+  
+  config = {
+    organization = "luzanov"
+    workspaces = {
+      name = "rds24"
+    }
+  }
+}
+
+
+
+
+
 data "aws_ami" "ubuntu" {
   most_recent = true
 
