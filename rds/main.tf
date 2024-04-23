@@ -1,4 +1,4 @@
-data "tfe_outputs" "vpc" {
+data "terraform_remote_state" "vpc" {
   config = {
     organization = "luzanov"
     workspaces = {
@@ -8,5 +8,5 @@ data "tfe_outputs" "vpc" {
 }
 
 output all {
-    value = data.tfe_outputs.vpc.outputs.vpc_id
+    value = data.terraform_remote_state.vpc.outputs
 }
