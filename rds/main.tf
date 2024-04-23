@@ -1,4 +1,5 @@
 data "terraform_remote_state" "vpc" {
+  backend = "remote"
   config = {
     organization = "luzanov"
     workspaces = {
